@@ -1,0 +1,41 @@
+Steps:
+1. npm i webpack webpack-cli -D
+
+2. Create a src/ folder
+
+3. Add the following scripts in package.json
+    - "start": "webpack --mode development",
+    - "build": "webpack --mode production"
+
+4. npm i react react-dom -S
+
+5. Install Babel to transpile the code from ES6 to ES5
+  - npm i babel-core babel-loader babel-preset-env babel-preset-react -D
+    - babel-core : Transforms your ES6 code to ES5 code.
+    - babel-loader : Transforms your js dependecies.
+    - babel-preset-env : Provides modern functionality on older browsers by determining which transformations/plugins to use and polyfills.
+    - babel-preset-react : Preset for all React plugins e.g turning JSX into functions.
+
+6. Create webpack.config.js file to state the rules for our babel-loader.
+
+7. Create .babelrc file to provide the options for babel-loader.
+
+8. Change your index.js file to render a component.
+
+9. Create index.html file to render your main react component.
+
+10. Install html-webpack-plugin which will be used to generate HTML file with <script> injected.
+    - npm i html-webpack-plugin -D
+
+11. Update webpack config using the html-webpack-plugin.
+
+12. Setting up webpack-dev-server to watch our changes.
+    - npm i webpack-dev-server -D
+      - Change the package.json start script to: "webpack-dev-server --mode development --open"
+      - You can also add '--hot' flag to your start script which will only allow you to reload the component that you have changed.
+
+13. Setting up the css
+    - npm i css-loader style-loader -D
+      - css-loader is used to resolve imported css files.
+      - style-loader is used to inject the styling into our dom.
+    - Update the webpack.config.js file.
